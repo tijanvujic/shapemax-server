@@ -6,7 +6,7 @@ const session = require("express-session");
 const multer = require("multer");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // -------- Middleware --------
 app.use(express.json());
