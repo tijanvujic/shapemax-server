@@ -1,0 +1,453 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* General Styling */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, var(--orange-color), var(--yellow-color));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 150vh;
+  transition: background 0.3s ease-in-out;
+  overflow: -moz-hidden-unscrollable;
+}
+
+.calculator-nav {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  /* background: var(--whiskey); */
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1000;
+  transition: top 0.3s ease-in-out;
+}
+
+.calculator-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.calculator-nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--thunder);
+  padding: 12px 18px;
+  background: var(--whiskey);
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.calculator-nav ul li a:hover,
+.calculator-nav ul li a.active {
+  background: var(--cape-palliser);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Macro Result Styling */
+#macro-result {
+  margin: 15px;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 70%;
+}
+
+#macro-result h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff6347;
+  margin-bottom: 10px;
+}
+
+#macro-result p {
+  font-size: 16px;
+  color: #444;
+  margin: 5px 0;
+}
+
+/* Mobile View */
+@media (max-width: 900px) {
+  .calculator-nav {
+    padding: 0;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .calculator-nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--whiskey);
+    text-align: center;
+    padding: 10px 0;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .calculator-nav.active ul {
+    display: flex;
+  }
+}
+
+/* ----------- Updated Calculator Section Styles ----------- */
+.calculator-section {
+  display: none;
+  text-align: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 90%;
+  max-width: 500px;
+}
+
+.calculator-section.active {
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----------- Input Fields ----------- */
+.input-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border: solid 1.5px #f2f2f2;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.input-box:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.input-box label {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.input-box input {
+  border: none;
+  border-bottom: solid 2px black;
+  outline: none;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 10px;
+  padding-bottom: 8px;
+  width: 5rem;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input-box input:focus {
+  border-color: var(--orange-color);
+}
+
+/* ----------- Result Box ----------- */
+.result-box {
+  text-align: center;
+  margin-top: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.bmi-category {
+  font-weight: 600;
+  font-size: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* ----------- BMI Range Colors ----------- */
+.bmi-range-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 1rem;
+  position: relative;
+  max-width: 400px;
+}
+
+.bmi-range-group section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bmi-line {
+  width: 100%;
+  height: 6px;
+}
+
+.underweight .bmi-line {
+  background: #0000ff;
+}
+
+.normal .bmi-line {
+  background: #008000;
+}
+.overweight .bmi-line {
+  background: #ffa500;
+}
+.obese .bmi-line {
+  background: #ff0000;
+}
+
+/* ----------- BMI Indicator ----------- */
+.bmi-indicator {
+  width: 3px;
+  height: 1.5rem;
+  background: #000;
+  position: absolute;
+  top: -15%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  left: 0%;
+  transition: 300ms ease-in-out;
+}
+
+/* ----------- Buttons ----------- */
+.button-group {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.button-group button {
+  width: 100%;
+  border: none;
+  padding: 0.8rem 0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  color: var(--light-color);
+}
+
+.button-group button:hover {
+  transform: scale(1.05);
+}
+
+.reset-button {
+  background: var(--thunder);
+}
+.calculate-button {
+  background: var(--orange-color);
+  box-shadow: 0 10px 16px rgba(177, 23, 0, 0.37);
+}
+
+/* Calorie Calculator Styling */
+.calculator-section {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  max-width: 600px;
+  margin: auto;
+}
+
+.calculator-section:hover {
+  transform: scale(1.02);
+}
+
+h2 {
+  color: var(--grenadier);
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 5px;
+}
+
+input,
+select {
+  width: 80%;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  border-bottom: 2px solid var(--dusty-gray);
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-bottom: 2px solid var(--orange-color);
+}
+
+.button-style button,
+.track-macros-container button {
+  background: var(--grenadier);
+  color: white;
+  border: none;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button-style button:hover,
+.track-macros-container button:hover {
+  transform: scale(1.05);
+  background: var(--cape-palliser);
+}
+
+#calorie-result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--thunder);
+}
+
+.macro-form-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.macro-form-column {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.macro-form-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+.macro-form-center select {
+  width: 70%;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .macro-form-column {
+    width: 100%;
+  }
+  .macro-form-center select {
+    width: 80%;
+  }
+}
+
+/* ----------- COMPACT MACRONUTRIENT FORM DESIGN ----------- */
+.macro-form-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 48%;
+}
+
+.macro-form-options {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+#macro-form input,
+#macro-form select {
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+#macro-form label {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#macro-form button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 8px;
+  background: var(--grenadier);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+#macro-form button:hover {
+  transform: scale(1.05);
+  background: var(--cape-palliser);
+}
+
+@media (max-width: 600px) {
+  .macro-form-columns {
+    flex-direction: column;
+  }
+  .field-group {
+    width: 100%;
+  }
+}

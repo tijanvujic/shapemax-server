@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.section {
+  scroll-margin-top: 120px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+    transform: translateY(220px);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0px);
+  }
+}
+
+.section {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+  width: 100%;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  padding: 40px 0;
+  transition: margin-left 0.3s ease;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section:first-of-type {
+  margin-top: 200px;
+
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+/*-------- Navigation Bar for Nutrition---------- */
+.nav-nutrition {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: linear-gradient(180deg, #ff7f50, #ff6347);
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.nav-nutrition a {
+  color: #fff;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-weight: 500;
+  width: 160px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  font-size: 15px;
+}
+
+.nav-nutrition a:hover {
+  background-color: #fff;
+  color: #ff6347;
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+/*-------- Hide Navigation Button--------- */
+.nav-toggle {
+  position: fixed;
+  top: 100px;
+  left: 5px;
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: left 0.3s ease;
+  z-index: 101;
+}
+
+/* Collapsed State */
+.nav-hidden .nav-nutrition {
+  transform: translateX(-100%);
+}
+
+.nav-hidden .nav-toggle {
+  left: 10px;
+  background: #ff7f50;
+}
+
+/*---------------------------- Section ------------------------ */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+  margin-bottom: 4rem;
+  background: #fff;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: scale(1.03);
+}
+
+.section img {
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.section-text {
+  width: 55%;
+}
+
+.section-text h2 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-text p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* link-no-style */
+.link-no-style {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #ff7f50;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 10px;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+}
+
+.link-no-style::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ff7f50;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.link-no-style:hover {
+  color: #ff6347;
+}
+
+.link-no-style:hover::after {
+  transform: scaleX(1);
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  width: 100%;
+  margin-top: 50px;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  header {
+    padding: 10px 50px;
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-nutrition {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-nutrition a {
+    padding: 10px 12px;
+  }
+
+  .nav-toggle {
+    top: 100px;
+    left: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    z-index: 1000;
+  }
+
+  .section {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .section img {
+    width: 80%;
+  }
+
+  .section-text {
+    width: 100%;
+  }
+}
+
+/*------------------Static Calculator Section-----------*/
+
+.static-calculator {
+  cursor: pointer;
+  z-index: 1000;
+
+  .calculator {
+    transition: transform 0.6s, border 0.6s, background-color 0.6s;
+    transform: scale(1);
+    position: fixed;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    background-color: #ff7f50;
+    right: 50px;
+    bottom: 50px;
+    border-radius: 35px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon {
+    position: absolute;
+    font-size: 2.3em;
+    color: var(--light-color);
+    margin-top: 0px;
+  }
+}
+
+.static-calculator:hover {
+  .calculator {
+    transform: scale(1.1);
+    border: 1px solid var(--light-color);
+    background-color: var(--salt-box);
+  }
+  .icon {
+    transition: color 0.8s;
+    color: var(--double-spanish-white);
+  }
+}
+
+/* ========= Enhanced Responsive Layout and Button Fixes ========= */
+@media (max-width: 600px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    padding: 2rem 1rem;
+  }
+
+  .section img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .section-text {
+    width: 100%;
+  }
+
+  .section-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .nav-nutrition {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    font-size: 14px;
+    z-index: 10;
+  }
+
+  .nav-nutrition a {
+    padding: 10px 12px;
+  }
+
+  .nav-toggle {
+    top: 100px;
+    left: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    z-index: 1000;
+  }
+
+  .static-calculator .calculator {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .static-calculator .icon {
+    font-size: 1.6rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

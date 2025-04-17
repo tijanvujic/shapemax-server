@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShapeMax</title>
+    <link rel="stylesheet" href="css/settings.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/hamburgerMenu.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/plan-section.css" />
+    <link rel="icon" href="assets/logoSM.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("R8Mkhw4cIoGjJgxs_"); // EmailJS public key
+      })();
+    </script>
+  </head>
+  <body>
+    <!---------------Header-------------->
+    <header>
+      <a href="index.html"><h1 class="logo">ShapeMax</h1></a>
+
+      <!-- Hamburger Menu Button -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="store.html">Store</a>
+        <a href="nutritionmealplan.html">Plan</a>
+        <div class="user-nav">
+          <a href="dashboard.html"><span id="user-greeting"></span></a>
+          <button id="logout-btn" class="btnLogin-popup" style="display: none">
+            Logout
+          </button>
+          <a href="login.html"
+            ><button id="login-btn" class="btnLogin-popup">Login</button></a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-------------Hero Section---------->
+    <section class="hero">
+      <div class="position">
+        <div class="hero-text">
+          <h2>Achieve The</h2>
+          <h2>Best <span>Shape</span> Of</h2>
+          <h2>Your Life</h2>
+          <p class="hero-description">
+            Whether you are looking to lose weight, gain muscle, or simply stay
+            healthy, we have the right plan for you. Join us today and start
+            your journey toward a fitter, stronger, and healthier you!
+          </p>
+        </div>
+        <button onclick="window.location.href='#plan'">See Plans</button>
+      </div>
+    </section>
+
+    <!--------------Nutrition Section--------->
+    <section class="nutrition" id="nutrition">
+      <div class="animate">
+        <div class="nutrition-right">
+          <div class="nutrition-text">
+            <h2>Master the</h2>
+            <h2>Art of Eating</h2>
+            <p>
+              Uncover the truth about nutrition and <br />
+              build meals that fuel your goals.
+            </p>
+          </div>
+          <a href="nutrition.html"><button>Learn More</button></a>
+        </div>
+
+        <div class="nutrition-left animate">
+          <img src="assets/food.png" alt="chicken" />
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------- Choose Your Plan --------------- -->
+    <section class="plan" id="plan">
+      <div class="plan-text animate">
+        <h2><i class="fas fa-list-ul"></i> Choose Your Plan</h2>
+      </div>
+
+      <div class="plan-container animate">
+        <!-- Basic Plan -->
+        <div class="plan-box basic">
+          <h3><i class="fas fa-seedling"></i> Basic</h3>
+          <p class="price">Free</p>
+          <ul class="features">
+            <li>
+              <i class="fas fa-check-circle"></i> Pre-made meal plan samples
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Basic calorie and macro tools
+            </li>
+            <li>
+              <i class="fas fa-times-circle"></i> No goal-based meal matching
+            </li>
+            <li>
+              <i class="fas fa-times-circle"></i> No progress tracking system
+            </li>
+          </ul>
+          <button
+            class="select-btn"
+            onclick="window.location.href='calculators.html'"
+          >
+            <i class="fas fa-arrow-right"></i> Try for Free
+          </button>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="plan-box pro">
+          <h3><i class="fas fa-crown"></i> Pro</h3>
+          <p class="price"><span>$3.99</span> Free</p>
+          <ul class="features">
+            <li>
+              <i class="fas fa-check-circle"></i> Includes all Basic features
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Personalized meal plan system
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Superfood & bad food breakdown
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Fat analysis and expert
+              support
+            </li>
+          </ul>
+          <button
+            class="select-btn"
+            onclick="window.location.href='nutritionmealplan.html'"
+          >
+            <i class="fas fa-user-plus"></i> Unlock Pro
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------- Contact Section ------------------- -->
+    <section class="contact" id="contact">
+      <div class="animate">
+        <div class="contact-text animate">
+          <h2>Contact Us</h2>
+          <p>We would love to hear from you! Please reach out to us.</p>
+        </div>
+
+        <form id="contact-form" class="contact-form" method="POST">
+          <div class="input-group">
+            <label for="name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Enter your name"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="email">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Enter your message"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+          <p id="form-msg" class="fade-msg"></p>
+        </form>
+      </div>
+    </section>
+
+    <!--------------Static Calculator Section--------->
+    <section class="static-calculator">
+      <a href="calculators.html">
+        <div class="calculator">
+          <span class="icon"><i class="ri-calculator-fill"></i></span>
+        </div>
+      </a>
+    </section>
+
+    <!---------Scripts--------------->
+
+    <script src="js/hamburgerMenu.js"></script>
+    <script src="js/updateNavBar.js"></script>
+    <script src="js/contact.js"></script>
+
+    <!-----------------------Footer--------------->
+    <div id="footer"></div>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

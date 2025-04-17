@@ -1,0 +1,30 @@
+.menu-toggle .bar {
+  background: var(--thunder);
+}
+
+.navigation.active {
+  a {
+    color: var(--light-color);
+  }
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+  color: var(--light-color);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+  color: var(--light-color);
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+  color: var(--light-color);
+}
+
+header {
+  background-color: #fff;
+  box-shadow: 1px 0 0 1px rgba(77, 77, 77, 0.1);
+}

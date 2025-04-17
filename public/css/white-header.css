@@ -1,0 +1,96 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* ----- Header Section ----- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 2em;
+  color: var(--thunder);
+  user-select: none;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: var(--thunder);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: var(--thunder);
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.navigation a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* ----- Login Button ----- */
+.navigation .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid var(--thunder);
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: var(--thunder);
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 0.3s;
+}
+
+.navigation .btnLogin-popup:hover {
+  background: var(--thunder);
+  color: #fff;
+}

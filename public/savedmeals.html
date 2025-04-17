@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saved Meals - ShapeMax</title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/savedmeals.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/blacktextheader.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="icon" href="assets/logoSM.png" />
+  </head>
+  <body>
+    <script src="js/checkRestricted.js"></script>
+
+    <!---------------Header-------------->
+    <header>
+      <a href="index.html"><h1 class="logo">ShapeMax</h1></a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="store.html">Store</a>
+        <a href="nutritionmealplan.html">Plan</a>
+        <div class="user-nav">
+          <a href="dashboard.html"><span id="user-greeting"></span></a>
+          <button id="logout-btn" class="btnLogin-popup" style="display: none">
+            Logout
+          </button>
+          <a href="login.html"
+            ><button id="login-btn" class="btnLogin-popup">Login</button></a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="container fade-in">
+      <h2 class="main-title">Your Saved Meals</h2>
+      <div class="sub-navigation">
+        <a href="nutritionmealplan.html" class="subnav-btn">Tracker</a>
+        <a href="savedmeals.html" class="subnav-btn active">Saved Meals</a>
+        <a href="calendar.html" class="subnav-btn">Calendar</a>
+      </div>
+
+      <div id="meals-container" class="meals-grid"></div>
+    </main>
+
+    <div id="footer"></div>
+    <script src="js/footer.js"></script>
+
+    <script src="js/savedmeals.js" type="module"></script>
+    <script src="js/hamburgerMenu.js"></script>
+    <script src="js/updateNavBar.js"></script>
+  </body>
+</html>

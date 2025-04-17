@@ -1,0 +1,25 @@
+:root {
+  --grey-color: #444652;
+  --light-color: #fff8f1;
+  --dark-color: #0a0301;
+  --orange-color: #c78356;
+  --yellow-color: #e7c296;
+
+  /*color-pallete*/
+  --double-spanish-white: #e7d0ba;
+  --whiskey: #d6a97d;
+  --thunder: #3a3335;
+  --dusty-gray: #9c8a89;
+  --cape-palliser: #9e694d;
+  --salt-box: #645d65;
+  --tobacco-brown: #714b40;
+  --cloudy: #b4aca4;
+  --spicy-pink: #817474;
+  --grenadier: #c43c04;
+
+  --accent-color: #ff7f50;
+}
+
+html {
+  scroll-behavior: smooth;
+}

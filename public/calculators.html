@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculators</title>
+    <link rel="stylesheet" href="css/calculators.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hamburgerMenu.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="icon" href="assets/logoSM.png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!---------------Header-------------->
+    <header>
+      <a href="index.html"><h1 class="logo">ShapeMax</h1></a>
+
+      <!-- Hamburger Menu Button -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="store.html">Store</a>
+        <a href="nutritionmealplan.html">Plan</a>
+        <div class="user-nav">
+          <a href="dashboard.html"><span id="user-greeting"></span></a>
+          <button id="logout-btn" class="btnLogin-popup" style="display: none">
+            Logout
+          </button>
+          <a href="login.html"
+            ><button id="login-btn" class="btnLogin-popup">Login</button></a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <nav class="calculator-nav">
+      <div class="nav-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul id="calculatorMenu">
+        <li>
+          <a href="#macros"
+            ><i class="fas fa-utensils"></i> Macronutrient Calculator</a
+          >
+        </li>
+        <li>
+          <a href="#bmi" class="active"
+            ><i class="fas fa-balance-scale"></i> BMI Calculator</a
+          >
+        </li>
+        <li>
+          <a href="#calories"
+            ><i class="fas fa-fire-alt"></i> Calorie Calculator</a
+          >
+        </li>
+        <li>
+          <a href="#bodyfat"
+            ><i class="fas fa-percentage"></i> Body Fat Calculator</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-------------- Macronutrient Calculator ----------------->
+    <section id="macros" class="calculator-section button-style">
+      <h2><i class="fas fa-utensils"></i> Macronutrient Calculator</h2>
+      <p>Calculate your daily intake of proteins, carbohydrates, and fats.</p>
+      <form id="macro-form">
+        <div class="macro-form-container">
+          <div class="macro-form-column">
+            <label for="macro-age">Age:</label>
+            <input
+              type="number"
+              id="macro-age"
+              value="18"
+              name="age"
+              required
+            />
+
+            <label for="macro-height">Height (cm):</label>
+            <input
+              type="number"
+              id="macro-height"
+              value="184"
+              name="height"
+              required
+            />
+          </div>
+          <div class="macro-form-column">
+            <label for="macro-weight">Weight (kg):</label>
+            <input
+              type="number"
+              id="macro-weight"
+              value="78"
+              name="weight"
+              required
+            />
+
+            <label for="macro-gender">Gender:</label>
+            <select id="macro-gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="macro-form-center">
+          <label for="macro-activity">Activity Level:</label>
+          <select id="macro-activity">
+            <option value="1.2">Sedentary (little to no exercise)</option>
+            <option value="1.375">Light exercise (1-3 days/week)</option>
+            <option value="1.55">Moderate exercise (3-5 days/week)</option>
+            <option value="1.725">Heavy exercise (6-7 days/week)</option>
+            <option value="1.9">Very heavy exercise (athlete level)</option>
+          </select>
+
+          <label for="macro-goal">Goal:</label>
+          <select id="macro-goal">
+            <option value="extreme-weight-loss">Extreme Weight Loss</option>
+            <option value="weight-loss">Weight Loss</option>
+            <option value="mild-weight-loss">Mild Weight Loss</option>
+            <option value="maintain-weight">Maintain Weight</option>
+            <option value="mild-weight-gain">Mild Weight Gain</option>
+            <option value="weight-gain">Weight Gain</option>
+            <option value="extreme-weight-gain">Extreme Weight Gain</option>
+          </select>
+        </div>
+        <button type="submit">Calculate Macros</button>
+      </form>
+      <div id="macro-result"></div>
+
+      <!-------------- Track Your Macros Button ------------->
+      <div class="track-macros-container">
+        <button
+          id="track-macros"
+          onclick="window.location.href='nutritionmealplan.html'"
+        >
+          <i class="fas fa-chart-line"></i> Track Your Macros
+        </button>
+      </div>
+    </section>
+
+    <!---------- BMI Calculator ----------->
+    <section id="bmi" class="calculator-section">
+      <h2 class="title"><i class="fas fa-balance-scale"></i> BMI Calculator</h2>
+      <p>Enter your height and weight to calculate your Body Mass Index.</p>
+      <div class="input-group">
+        <!--INPUT HEIGHT-->
+        <section class="input-box">
+          <label for="heightInput">Height (cm)</label>
+          <input type="number" name="height" id="heightInput" />
+        </section>
+        <!------------INPUT WEIGHT------------->
+        <section class="input-box">
+          <label for="weightInput">Weight (kg)</label>
+          <input type="number" name="weight" id="weightInput" />
+        </section>
+      </div>
+
+      <!--------------RESULT--------------->
+      <div class="result-box">
+        <h1 id="resultBmiScore" class="bmi-score">0</h1>
+        <h3 id="resultBmiCategory" class="bmi-category">N/A</h3>
+      </div>
+      <!-----------BMI RANGE----------------->
+      <div class="bmi-range-group">
+        <section class="underweight">
+          <div class="bmi-line"></div>
+          <h5 class="bmi-label">Underweight</h5>
+          <h4 class="bmi-number">&lt; 18.5</h4>
+        </section>
+        <section class="normal">
+          <div class="bmi-line"></div>
+          <h5 class="bmi-label">Normal</h5>
+          <h4 class="bmi-number">18.5-24.9</h4>
+        </section>
+        <section class="overweight">
+          <div class="bmi-line"></div>
+          <h5 class="bmi-label">Overweight</h5>
+          <h4 class="bmi-number">25-29.9</h4>
+        </section>
+        <section class="obese">
+          <div class="bmi-line"></div>
+          <h5 class="bmi-label">Obese</h5>
+          <h4 class="bmi-number">&gt; 30</h4>
+        </section>
+        <!-----------BMI INDICATOR--------------->
+        <div id="bmiIndicator" class="bmi-indicator"></div>
+      </div>
+      <div class="button-group">
+        <button id="resetButton" class="reset-button">Reset</button>
+        <button id="calculateButton" class="calculate-button">Calculate</button>
+      </div>
+    </section>
+
+    <!------------- Calorie Calculator ---------------->
+    <section id="calories" class="calculator-section button-style">
+      <h2><i class="fas fa-fire-alt"></i> Calorie Calculator</h2>
+      <p>
+        Find out how many calories you need daily based on your activity level.
+      </p>
+      <form id="calorie-form">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required />
+
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label for="activity">Activity Level:</label>
+        <select id="activity">
+          <option value="1.2">Sedentary (little to no exercise)</option>
+          <option value="1.375">Light exercise (1-3 days/week)</option>
+          <option value="1.55">Moderate exercise (3-5 days/week)</option>
+          <option value="1.725">Heavy exercise (6-7 days/week)</option>
+          <option value="1.9">Very heavy exercise (athlete level)</option>
+        </select>
+
+        <button type="submit">Calculate Calories</button>
+      </form>
+
+      <div id="calorie-result"></div>
+    </section>
+
+    <!------------------ Body Fat Calculator ---------------->
+    <section id="bodyfat" class="calculator-section button-style">
+      <h2><i class="fas fa-percentage"></i> Body Fat Percentage Calculator</h2>
+      <p>
+        Estimate your body fat percentage using your waist, weight, height, age,
+        and gender.
+      </p>
+      <form id="bodyfat-form">
+        <label for="bodyfat-gender">Gender:</label>
+        <select id="bodyfat-gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label for="bodyfat-age">Age (years):</label>
+        <input type="number" id="bodyfat-age" name="age" required />
+
+        <label for="bodyfat-height">Height (cm):</label>
+        <input type="number" id="bodyfat-height" name="height" required />
+
+        <label for="bodyfat-weight">Weight (kg):</label>
+        <input type="number" id="bodyfat-weight" name="weight" required />
+
+        <button type="submit">Calculate Body Fat</button>
+      </form>
+
+      <div id="bodyfat-result"></div>
+    </section>
+
+    <div id="footer"></div>
+    <script src="js/footer.js"></script>
+
+    <script src="js/calculators.js"></script>
+    <script src="js/hamburgerMenu.js"></script>
+    <script src="js/updateNavBar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShapeMax Store</title>
+    <link rel="stylesheet" href="/css/store.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hamburgerMenu.css" />
+    <link rel="stylesheet" href="css/blacktextheader.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <link rel="stylesheet" href="/css/settings.css" />
+    <link rel="icon" href="/assets/logoSM.png" />
+  </head>
+  <body>
+    <script src="js/checkRestricted.js"></script>
+    <!---------------Header-------------->
+    <header>
+      <a href="index.html"><h1 class="logo">ShapeMax</h1></a>
+
+      <!-- Hamburger Menu Button -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="store.html">Store</a>
+        <a href="nutritionmealplan.html">Plan</a>
+        <div class="user-nav">
+          <a href="dashboard.html"><span id="user-greeting"></span></a>
+          <button id="logout-btn" class="btnLogin-popup" style="display: none">
+            Logout
+          </button>
+          <a href="login.html"
+            ><button id="login-btn" class="btnLogin-popup">Login</button></a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="store-title">ShapeMax Store</h1>
+      <div class="products-container" id="product-list"></div>
+    </main>
+
+    <section class="cart-section">
+      <h2>Your Cart</h2>
+      <div class="cart-items"></div>
+      <div class="cart-footer">
+        <div>
+          <span class="label">Total:</span>
+          <span class="value" id="cart-total">$0.00</span>
+        </div>
+        <div>
+          <span class="label">Items in Cart:</span>
+          <span class="value" id="cart-count">0</span>
+        </div>
+        <button id="checkout-btn" class="checkout-btn">
+          Proceed to Checkout
+        </button>
+      </div>
+    </section>
+
+    <!-- Floating Cart Toggle -->
+
+    <button class="cart-toggle-btn" id="cart-toggle">
+      <i class="fas fa-shopping-cart"></i> <span id="cart-bubble">0</span>
+    </button>
+
+    <div id="footer"></div>
+    <script src="js/footer.js"></script>
+
+    <script type="module" src="/js/store.js"></script>
+    <script src="js/hamburgerMenu.js"></script>
+    <script src="js/updateNavBar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - ShapeMax</title>
+    <link rel="stylesheet" href="css/settings.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="icon" href="assets/logoSM.png" />
+  </head>
+  <body class="login-page">
+    <!---------------Header-------------->
+    <header>
+      <a href="index.html"><h1 class="logo">ShapeMax</h1></a>
+
+      <!-- Hamburger Menu Button -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="store.html">Store</a>
+        <a href="nutritionmealplan.html">Plan</a>
+        <div class="user-nav">
+          <a href="dashboard.html"><span id="user-greeting"></span></a>
+          <button id="logout-btn" class="btnLogin-popup" style="display: none">
+            Logout
+          </button>
+          <a href="login.html"
+            ><button id="login-btn" class="btnLogin-popup">Login</button></a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <div class="wrapper active-popup">
+      <div class="form-box register">
+        <h2>Create Account</h2>
+        <form id="register-form">
+          <div class="input-box">
+            <input type="text" name="name" required placeholder="" />
+            <label>Name</label>
+          </div>
+          <div class="input-box">
+            <input type="email" name="email" required placeholder="" />
+            <label>Email</label>
+          </div>
+          <div class="input-box">
+            <input type="password" name="password" required placeholder="" />
+            <label>Password</label>
+          </div>
+          <p class="form-footer">
+            Already have an account?
+            <a href="login.html">Login</a>
+          </p>
+          <button type="submit" class="btn">Register</button>
+        </form>
+        <p id="register-msg"></p>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("register-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const formData = new FormData(e.target);
+          const data = Object.fromEntries(formData);
+
+          const res = await fetch("/api/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+
+          const result = await res.json();
+          document.getElementById("register-msg").textContent = result.message;
+          if (result.success) {
+            window.location.href = "/login.html";
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,478 @@
+@media only screen and (min-width: 1640px) {
+  /*--------------Hero----------------*/
+  .hero {
+    .position {
+      width: 80%;
+      margin-top: 80px;
+      .hero-text {
+        font-size: 52px;
+
+        .hero-description {
+          text-align: center;
+          font-size: 20px;
+          margin-top: 30px;
+          font-weight: 300;
+          line-height: 1.5;
+          max-width: 500px;
+        }
+      }
+
+      button {
+        width: 230px;
+        border-radius: 50px;
+        font-size: 24px;
+        margin: 40px 0 0 140px;
+        border: 3px solid var(--grey-color);
+        padding: 5px;
+      }
+
+      button:hover {
+        border: 3px solid var(--light-color);
+      }
+    }
+  }
+
+  /*------------------Nutrition Section-----------*/
+  .nutrition {
+    .nutrition-right {
+      right: 13%;
+
+      .nutrition-text {
+        width: 600px;
+        font-size: 50px;
+
+        p {
+          font-size: 22px;
+        }
+      }
+
+      button {
+        width: 230px;
+        border-radius: 50px;
+        font-size: 24px;
+        font-weight: 500;
+        margin-top: 40px;
+        border: 3px solid #fff;
+        padding: 5px;
+      }
+    }
+
+    .nutrition-left {
+      left: 20%;
+
+      box-shadow: 8px 5px 5px 2px var(--thunder);
+      transform: scale(1.4);
+    }
+  }
+
+  @keyframes smoothMotion {
+    0% {
+      transform: scale(1.4) rotate(0deg);
+    }
+    25% {
+      transform: scale(1.44) rotate(-90deg);
+    }
+    50% {
+      transform: scale(1.42) rotate(-180deg);
+    }
+    75% {
+      transform: scale(1.48) rotate(-270deg);
+    }
+    100% {
+      transform: scale(1.4) rotate(-360deg);
+    }
+  }
+
+  .plan {
+    .plan-text h2 {
+      font-size: 50px;
+    }
+    .left-plan,
+    .right-plan {
+      width: 60%;
+      margin: 20px auto;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .left-plan {
+    background-color: var(--salt-box);
+    color: var(--light-color);
+  }
+
+  .right-plan {
+    background-color: var(--cape-palliser);
+    color: var(--light-color);
+  }
+
+  .left-plan:hover,
+  .right-plan:hover {
+    transform: scale(1.05);
+  }
+
+  .plan button {
+    width: 200px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: 2px solid var(--light-color);
+    background: transparent;
+    color: var(--light-color);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .plan button:hover {
+    background: var(--light-color);
+    color: var(--dark-color);
+  }
+}
+
+@media only screen and (max-width: 1640px) and (min-width: 1240px) {
+  /*--------------Hero----------------*/
+  .hero {
+    .position {
+      width: 80%;
+      margin-top: 60px;
+      .hero-text {
+        font-size: 45px;
+      }
+
+      button {
+        width: 215px;
+        border-radius: 50px;
+        font-size: 22px;
+        margin-top: 35px;
+        border: 3px solid var(--grey-color);
+        padding: 4px;
+      }
+
+      button:hover {
+        border: 3px solid var(--light-color);
+      }
+    }
+  }
+
+  /*------------------Nutrition Section-----------*/
+  .nutrition {
+    .nutrition-right {
+      top: 40%;
+      right: 10%;
+
+      .nutrition-text {
+        width: 500px;
+        font-size: 45px;
+
+        p {
+          font-size: 20px;
+        }
+      }
+
+      button {
+        width: 215px;
+        border-radius: 50px;
+        font-size: 22px;
+        font-weight: 500;
+        margin-top: 35px;
+        border: 3px solid #fff;
+        padding: 4px;
+      }
+    }
+
+    .nutrition-left {
+      top: 40%;
+      left: 13%;
+      box-shadow: 8px 5px 5px 2px var(--thunder);
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes smoothMotion {
+    0% {
+      transform: scale(1.2) rotate(0deg);
+    }
+    25% {
+      transform: scale(1.24) rotate(-90deg);
+    }
+    50% {
+      transform: scale(1.22) rotate(-180deg);
+    }
+    75% {
+      transform: scale(1.28) rotate(-270deg);
+    }
+    100% {
+      transform: scale(1.2) rotate(-360deg);
+    }
+  }
+  /* --------------Plan----------- */
+  .plan-text h2 {
+    font-size: 50px;
+  }
+
+  .left-plan,
+  .right-plan {
+    width: 50%;
+    padding: 35px;
+  }
+
+  .plan button {
+    width: 215px;
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 900px) {
+  /*--------------Hero----------------*/
+  .hero {
+    .position {
+      width: 80%;
+      margin-top: 60px;
+      .hero-text {
+        font-size: 35px;
+      }
+
+      button {
+        width: 215px;
+        border-radius: 50px;
+        font-size: 22px;
+        margin-top: 35px;
+        border: 3px solid var(--grey-color);
+        padding: 4px;
+      }
+
+      button:hover {
+        border: 3px solid var(--light-color);
+      }
+    }
+  }
+
+  /*------------------Nutrition Section-----------*/
+  .nutrition {
+    .nutrition-right {
+      right: 6%;
+
+      .nutrition-text {
+        width: 400px;
+        font-size: 35px;
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      button {
+        width: 170px;
+        border-radius: 50px;
+        font-size: 17px;
+        font-weight: 500;
+        margin-top: 35px;
+        border: 1px solid #fff;
+        padding: 2px;
+      }
+    }
+
+    .nutrition-left {
+      left: 6%;
+      box-shadow: 8px 5px 5px 2px var(--thunder);
+      transform: scale(0.9);
+    }
+  }
+
+  @keyframes smoothMotion {
+    0% {
+      transform: scale(0.9) rotate(0deg);
+    }
+    25% {
+      transform: scale(0.94) rotate(-90deg);
+    }
+    50% {
+      transform: scale(0.92) rotate(-180deg);
+    }
+    75% {
+      transform: scale(0.98) rotate(-270deg);
+    }
+    100% {
+      transform: scale(0.9) rotate(-360deg);
+    }
+  }
+
+  /* -------------Plan--------- */
+  .plan-text h2 {
+    font-size: 45px;
+  }
+
+  .left-plan,
+  .right-plan {
+    width: 60%;
+    padding: 30px;
+  }
+
+  .plan button {
+    width: 200px;
+    font-size: 20px;
+  }
+
+  /*------------------Kontakt Section-----------*/
+  .contact {
+    padding: 200px 0;
+  }
+  .contact-text h2 {
+    font-size: 32px;
+  }
+
+  .contact-text p {
+    font-size: 16px;
+  }
+
+  .contact-form {
+    max-width: 90%;
+    width: 550px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  /*--------------Hero----------------*/
+  .hero {
+    .position {
+      margin-top: 60px;
+      text-align: center;
+      .hero-text {
+        text-align: center;
+        font-size: 32px;
+
+        .hero-description {
+          text-align: center;
+        }
+      }
+
+      button {
+        width: 170px;
+        border-radius: 50px;
+        font-size: 18px;
+        margin: 35px auto 0 auto;
+        border: 1px solid var(--grey-color);
+        padding: 4px;
+        display: block;
+      }
+
+      button:hover {
+        border: 1px solid var(--light-color);
+      }
+    }
+  }
+
+  /*------------------Nutrition Section-----------*/
+  .nutrition {
+    flex-direction: column;
+    height: auto;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .nutrition .nutrition-right,
+  .nutrition .nutrition-left {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    margin: 0 auto 40px;
+  }
+
+  @keyframes smoothMotion {
+    0% {
+      transform: scale(0.8) rotate(0deg);
+    }
+    25% {
+      transform: scale(0.84) rotate(-90deg);
+    }
+    50% {
+      transform: scale(0.82) rotate(-180deg);
+    }
+    75% {
+      transform: scale(0.88) rotate(-270deg);
+    }
+    100% {
+      transform: scale(0.8) rotate(-360deg);
+    }
+  }
+  /*-------------Plan------------------*/
+  .plan {
+    padding: 200px 0;
+    padding-bottom: 50px;
+    z-index: 4;
+  }
+
+  .plan-text h2 {
+    font-size: 40px;
+  }
+
+  .plan-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .left-plan,
+  .right-plan {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .plan button {
+    width: 160px;
+    font-size: 18px;
+  }
+
+  /*------------------Kontakt Section-----------*/
+
+  .contact-form {
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .contact {
+    padding: 200px 0;
+  }
+  .contact-text h2 {
+    font-size: 32px;
+  }
+
+  .contact-text p {
+    font-size: 16px;
+  }
+
+  .contact-form {
+    max-width: 90%;
+    width: 500px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+}

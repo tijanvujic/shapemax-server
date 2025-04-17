@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - ShapeMax</title>
+    <!-- <link rel="stylesheet" href="css/login.css" /> -->
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/hamburgerMenu.css" />
+    <link rel="stylesheet" href="css/blacktextheader.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="icon" href="assets/logoSM.png" />
+
+    <!------------Icons--------->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="login-page">
+    <script src="js/checkRestricted.js"></script>
+    <!---------------Header-------------->
+    <header>
+      <a href="index.html"><h1 class="logo">ShapeMax</h1></a>
+
+      <!-- Hamburger Menu Button -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="store.html">Store</a>
+        <a href="nutritionmealplan.html">Plan</a>
+        <div class="user-nav">
+          <a href="dashboard.html"><span id="user-greeting"></span></a>
+          <button id="logout-btn" class="btnLogin-popup" style="display: none">
+            Logout
+          </button>
+          <a href="login.html"
+            ><button id="login-btn" class="btnLogin-popup">Login</button></a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <div class="wrapper active-popup">
+      <div class="form-box">
+        <h2>Welcome to ShapeMax!</h2>
+        <p id="welcome-msg" class="fade-msg">Loading...</p>
+
+        <!-- Profile Section -->
+        <h3 class="section-title">Edit Your Profile</h3>
+        <form id="profile-form">
+          <div class="input-box">
+            <input type="text" name="name" id="name" required placeholder=" " />
+            <label>Name</label>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder=" "
+            />
+            <label>Password (optional)</label>
+          </div>
+          <button type="submit" class="btn">
+            <i class="fas fa-save"></i> Save Changes
+          </button>
+
+          <p id="profile-msg" class="fade-msg"></p>
+        </form>
+
+        <!-- Goal Section -->
+        <h3 class="section-title">
+          <i class="fas fa-bullseye"></i> Your Fitness Goal
+        </h3>
+
+        <form id="goal-form">
+          <select name="goal" required>
+            <option value="">-- Select --</option>
+            <option value="loss">Weight Loss</option>
+            <option value="gain">Weight Gain</option>
+            <option value="maintain">Maintain Weight</option>
+          </select>
+          <button type="submit" class="btn" style="margin-top: 10px">
+            <i class="fas fa-check-circle"></i> Save Goal
+          </button>
+        </form>
+        <p id="goal-msg" class="goal-status fade-msg"></p>
+
+        <div id="admin-link-container" style="display: none">
+          <a href="/admin-food.html" class="admin-link">
+            <i class="fas fa-tools"></i> Admin Panel
+          </a>
+        </div>
+
+        <!-- Logout -->
+        <button class="btn logout-btn" onclick="logout()">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </div>
+
+    <script>
+      fetch("/api/user")
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.loggedIn && data.user.is_admin) {
+            document.getElementById("admin-link-container").style.display =
+              "block";
+          }
+        });
+      async function getUser() {
+        const res = await fetch("/api/user");
+        const data = await res.json();
+        if (!data.loggedIn) return (window.location.href = "/login.html");
+
+        // Display user info
+        document.getElementById(
+          "welcome-msg"
+        ).innerHTML = `Hello, <strong>${data.user.name}</strong><br><small>${data.user.email}</small>`;
+
+        // Fill name
+        document.getElementById("name").value = data.user.name;
+
+        // Set current goal
+        if (data.user.goal) {
+          document.getElementById(
+            "goal-msg"
+          ).textContent = `Current Goal: ${data.user.goal}`;
+          document.querySelector('select[name="goal"]').value = data.user.goal;
+        }
+      }
+
+      function showMessage(id, message, color = "#444") {
+        const el = document.getElementById(id);
+        el.textContent = message;
+        el.style.color = color;
+        el.classList.add("show");
+      }
+
+      // Save profile
+      document
+        .getElementById("profile-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const res = await fetch("/api/update-profile", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: form.name.value,
+              password: form.password.value,
+            }),
+          });
+          const result = await res.json();
+          showMessage("profile-msg", result.message);
+        });
+
+      // Save goal
+      document
+        .getElementById("goal-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const res = await fetch("/api/set-goal", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ goal: form.goal.value }),
+          });
+          const data = await res.json();
+          showMessage("goal-msg", data.message);
+        });
+
+      function logout() {
+        fetch("/api/logout").then(() => (location.href = "/login.html"));
+      }
+
+      getUser();
+    </script>
+    <script src="js/updateNavBar.js"></script>
+    <script src="js/hamburgerMenu.js"></script>
+  </body>
+</html>

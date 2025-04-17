@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrition</title>
+
+    <link rel="stylesheet" href="css/nutrition.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hamburgerMenu.css" />
+    <link rel="stylesheet" href="css/alt.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/blacktextheader.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="icon" href="assets/logoSM.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style></style>
+  </head>
+  <body>
+    <!---------------Header-------------->
+    <header>
+      <a href="index.html"><h1 class="logo">ShapeMax</h1></a>
+
+      <!-- Hamburger Menu Button -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="store.html">Store</a>
+        <a href="nutritionmealplan.html">Plan</a>
+        <div class="user-nav">
+          <a href="dashboard.html"><span id="user-greeting"></span></a>
+          <button id="logout-btn" class="btnLogin-popup" style="display: none">
+            Logout
+          </button>
+          <a href="login.html"
+            ><button id="login-btn" class="btnLogin-popup">Login</button></a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    <div class="nav-nutrition">
+      <a href="#nutrition-meal-plan">Meal Plan</a>
+      <a href="#super-foods">Super Foods</a>
+      <a href="#foods-to-avoid">Foods to Avoid</a>
+      <a href="#protein">Protein</a>
+      <a href="#vitamins">Vitamins</a>
+      <a href="#hydration">Hydration</a>
+    </div>
+
+    <div class="container">
+      <!-------Meal plan------->
+      <section id="nutrition-meal-plan" class="section">
+        <div class="section-text">
+          <h2>
+            <i class="fas fa-utensils"></i> Personalized Nutrition Meal Plans
+          </h2>
+
+          <p>
+            Tailored meal plans designed to meet your unique fitness goals,
+            whether you're looking to lose weight, build muscle, or maintain a
+            healthy lifestyle.
+          </p>
+          <p>
+            Explore balanced meals optimized for your calorie and nutrient
+            needs.
+          </p>
+          <a href="nutritionmealplan.html" class="link-no-style"
+            >Get Your Meal Plan</a
+          >
+        </div>
+        <img src="assets/nutrition/meal-plan.jpg" alt="Nutrition Meal Plan" />
+      </section>
+
+      <!-- Top 10 Testosterone Super Foods Section -->
+      <section id="super-foods" class="section super-foods">
+        <img
+          src="assets/nutrition/testostorone.jpg"
+          alt="Testosterone-Boosting Foods"
+        />
+        <div class="section-text">
+          <h2>
+            <i class="fas fa-dumbbell"></i> Top 10 Testosterone-Boosting
+            Superfoods
+          </h2>
+
+          <p>
+            Fuel your strength, confidence, and vitality by adding these
+            science-backed superfoods to your diet. Each one is packed with
+            nutrients that support natural testosterone production, energy
+            levels, and overall male health.
+          </p>
+          <a href="superfoods.html" class="link-no-style"
+            ><i class="fas fa-utensils"></i> Discover the Foods</a
+          >
+        </div>
+      </section>
+
+      <!-- Foods You Should Avoid Section -->
+      <section id="foods-to-avoid" class="section foods-to-avoid">
+        <div class="section-text">
+          <h2>
+            <i class="fas fa-exclamation-triangle"></i> Testosterone-Killing
+            Foods to Avoid
+          </h2>
+
+          <p>
+            These common foods can sabotage your hormones, increase estrogen,
+            and spike cortisol. Learn which ingredients quietly drain your
+            energy, lower your drive, and block your gains.
+          </p>
+          <a href="badfoods.html" class="link-no-style">Learn What to Avoid</a>
+        </div>
+        <img
+          src="assets/nutrition/no-sugar.jpg"
+          alt="Foods to Avoid for Testosterone"
+        />
+      </section>
+
+      <!-------Protein------->
+      <section id="protein" class="section">
+        <img src="assets/nutrition/protein.jpg" alt="Protein-rich foods" />
+        <div class="section-text">
+          <h2>The Importance of Protein</h2>
+          <p>
+            Protein is essential for muscle growth, repair, and overall health.
+            It helps maintain a strong immune system and keeps you feeling full
+            longer, reducing cravings.
+          </p>
+          <p>
+            Include lean meats, fish, eggs, beans, and dairy products in your
+            diet for a balanced protein intake.
+          </p>
+          <a href="protein.html" class="link-no-style">Learn More</a>
+        </div>
+      </section>
+
+      <!-------Vitamins------->
+      <section id="vitamins" class="section">
+        <div class="section-text">
+          <h2>The Power of Vitamins</h2>
+          <p>
+            Vitamins play a crucial role in body functions, from boosting
+            immunity to promoting skin and bone health.
+          </p>
+          <p>
+            Eat a variety of colorful fruits and vegetables to ensure you get
+            essential vitamins like A, C, D, and B-complex.
+          </p>
+        </div>
+        <img
+          src="assets/nutrition/vitamins.jpg"
+          alt="Vitamins and supplements"
+        />
+      </section>
+
+      <!-------Hydration------->
+      <section id="hydration" class="section">
+        <img src="assets/nutrition/water.jpg" alt="Vitamins and supplements" />
+        <div class="section-text">
+          <h2>Stay Hydrated</h2>
+          <p>
+            Water is essential for digestion, circulation, and temperature
+            regulation. Dehydration can cause fatigue and impair cognitive
+            function.
+          </p>
+          <p>
+            Aim to drink at least 8 cups of water daily and more if you are
+            active or in hot climates.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!--------------Static Calculator Section--------->
+    <section class="static-calculator">
+      <a href="calculators.html">
+        <div class="calculator">
+          <span class="icon"><i class="ri-calculator-fill"></i></span>
+        </div>
+      </a>
+    </section>
+
+    <div id="footer"></div>
+    <script src="js/footer.js"></script>
+
+    <!---------------------Scripts------------------->
+
+    <script>
+      function toggleNav() {
+        document.body.classList.toggle("nav-hidden");
+      }
+    </script>
+
+    <script src="js/scroll.js"></script>
+    <script src="js/hamburgerMenu.js"></script>
+    <script src="js/updateNavBar.js"></script>
+  </body>
+</html>

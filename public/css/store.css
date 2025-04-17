@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
+  color: #333;
+  padding-top: 100px;
+}
+
+/* Store Title */
+.store-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #ff6347;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Layout */
+main {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+  min-height: 100vh;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 26px;
+  margin-bottom: 40px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  height: 500px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.product-card img {
+  margin-top: 25px;
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.product-card .description {
+  font-size: 0.9rem;
+  color: #666;
+  flex-grow: 1; /* pushes footer to the bottom */
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-footer span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.add-to-cart-btn {
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #ff7f50, #ff6347);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: linear-gradient(135deg, #ff6347, #ff4500);
+  transform: scale(1.05);
+}
+
+/*------- Cart Section -----------*/
+.cart-section {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  width: 360px;
+  height: calc(100vh - 100px);
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px 0 0 16px;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.4s ease-in-out;
+  z-index: 999;
+  overflow: hidden; /* prevent the full section from scrolling */
+}
+
+.cart-section.visible {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-section h2 {
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-right: 5px;
+  margin-bottom: 16px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-item img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-details p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* Total + Count */
+#cart-total,
+#cart-count {
+  font-weight: 700;
+  color: #333;
+}
+
+/* Toast */
+.toast-message {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading */
+.loading-message {
+  font-size: 1rem;
+  color: #777;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  .cart-section {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    border-radius: 0;
+    padding-top: 100px;
+  }
+}
+
+/* Toggle Cart Button */
+.cart-toggle-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  background: #ff6347;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cart-toggle-btn:hover {
+  background: #ff4500;
+  transform: scale(1.05);
+}
+
+#cart-bubble {
+  background: white;
+  color: #ff4500;
+  font-weight: bold;
+  padding: 2px 8px;
+  margin-left: 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+/* Animate Cart Total */
+#cart-total.pop {
+  animation: popScale 0.4s ease;
+}
+
+@keyframes popScale {
+  0% {
+    transform: scale(1);
+    color: #ff4500;
+  }
+  50% {
+    transform: scale(1.3);
+    color: #e91e63;
+  }
+  100% {
+    transform: scale(1);
+    color: #333;
+  }
+}
+
+/*-------------Animation for product cards---------*/
+.product-card {
+  opacity: 0;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: var(--delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.product-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08); /* soft neutral shadow */
+}
+
+/*---------Cart Footer----------*/
+
+.cart-footer {
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  padding-bottom: 20px;
+}
+
+.cart-footer .label {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.cart-footer .value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff6347;
+}
+
+#cart-total,
+#cart-count {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #ff6347;
+}
+
+.checkout-btn {
+  margin-top: 10px;
+  padding: 12px;
+  width: 100%;
+  background: linear-gradient(135deg, #4caf50, #388e3c);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  transform: scale(1.03);
+}

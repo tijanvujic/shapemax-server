@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* calendar.css */
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+.container {
+  padding: 100px 40px 60px;
+  max-width: 1100px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+/* Main Title */
+.main-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff6347;
+  margin-bottom: 30px;
+}
+
+/* Sub-navigation */
+.sub-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0 20px;
+  flex-wrap: wrap;
+}
+
+.subnav-btn {
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #ff6347;
+  border: 2px solid #ff6347;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.subnav-btn:hover,
+.subnav-btn.active {
+  background-color: #ff6347;
+  color: white;
+}
+
+/* Calendar Controls */
+.calendar-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+#calendar-date {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 200px;
+}
+
+.btn-today {
+  padding: 10px 16px;
+  background-color: #ff7f50;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-today:hover {
+  background-color: #ff4500;
+}
+
+/* Meals Display */
+.calendar-content {
+  text-align: center;
+}
+
+.meal-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.meal-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 220px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.meal-card:hover {
+  transform: scale(1.03);
+}
+
+.meal-card strong {
+  color: #ff6347;
+}
+
+.meal-totals {
+  font-weight: 600;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+/* Delete button */
+.delete-meal {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border: none;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete-meal:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .meal-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .calendar-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/*----------- Footer------------ */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  width: 100%;
+  margin-top: 0px;
+}
+
+/*-----------Fade in animation-------*/
+.fade-in {
+  animation: fadeInContainer 0.6s ease-in-out;
+}
+
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

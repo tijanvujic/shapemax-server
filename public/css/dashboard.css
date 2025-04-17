@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 120vh;
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+  width: 500px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  animation: fadeInSlide 0.8s ease-in-out forwards;
+  margin-top: 120px;
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-box h2 {
+  text-align: center;
+  color: #3a3335;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+/* Animated Welcome Message */
+#welcome-msg {
+  text-align: center;
+  font-size: 1rem;
+  margin: 20px 0 30px;
+  font-weight: 500;
+  color: #333;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Titles */
+.section-title {
+  margin-top: 30px;
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+/* Inputs & Select */
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input,
+form select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #fafafa;
+}
+
+.input-box input:focus,
+form select:focus {
+  border-color: #ff7f50;
+  box-shadow: 0 0 8px rgba(255, 127, 80, 0.3);
+}
+
+.input-box label {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background: #fff;
+  padding: 0 6px;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #ff7f50, #ff6347);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #ff6347, #ff4500);
+  transform: scale(1.05);
+}
+
+/* Logout Button */
+.logout-btn {
+  background: #444;
+  margin-top: 30px;
+}
+
+.logout-btn:hover {
+  background: #222;
+}
+
+/* Messages (Fade In on Form Submit) */
+.fade-msg {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #444;
+}
+
+.fade-msg.show {
+  opacity: 1;
+}
+
+/* Goal Message */
+.goal-status {
+  text-align: center;
+  font-weight: 500;
+  color: #2c2c2c;
+  font-size: 14px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 500px) {
+  .form-box h2 {
+    font-size: 22px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 15px;
+  }
+}
+
+/* === Slight Card Gradient & Shadow Boost === */
+.wrapper {
+  background: linear-gradient(to bottom right, #fffdfb, #fff5f0);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ffe0d4;
+}
+
+/* === Input Glow & Subtle Placeholder Animation === */
+.input-box input::placeholder,
+form select::placeholder {
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.input-box input:focus::placeholder {
+  color: transparent;
+}
+
+/* === Button Subtle Glow on Hover === */
+.btn:hover {
+  box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.2);
+}
+
+/* === Welcome Text Slight Gradient Look === */
+#welcome-msg {
+  background: linear-gradient(to right, #ff7f50, #ff6347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+/* === Animated Divider Line Under Section Title === */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #ff7f50;
+  margin-top: 8px;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Admin Panel Link Styling */
+.admin-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.admin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff7f50, #ff6347);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 14px rgba(255, 99, 71, 0.4);
+}
+
+.admin-link:hover {
+  background: linear-gradient(135deg, #ff6347, #ff4500);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 99, 71, 0.5);
+}
+
+.admin-link i {
+  font-size: 16px;
+}

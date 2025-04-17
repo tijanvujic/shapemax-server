@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Food - Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/admin-food.css" />
+    <link rel="icon" href="assets/logoSM.png" />
+  </head>
+  <body>
+    <h2><i class="fas fa-plus"></i> Add New Food</h2>
+    <div class="back-link">
+      <a href="/dashboard.html"
+        ><i class="fas fa-arrow-left"></i> Back to Dashboard</a
+      >
+    </div>
+    <form id="food-form" enctype="multipart/form-data">
+      <input type="hidden" name="id" />
+
+      <label>Name</label>
+      <input type="text" name="name" required />
+
+      <label>Amount (grams)</label>
+      <input type="number" name="amount" required />
+
+      <label>Protein (g)</label>
+      <input type="number" name="protein" step="0.1" required />
+
+      <label>Fats (g)</label>
+      <input type="number" name="fats" step="0.1" required />
+
+      <label>Carbs (g)</label>
+      <input type="number" name="carbs" step="0.1" required />
+
+      <label>Calories</label>
+      <input type="number" name="calories" required />
+
+      <label>Image File (leave blank to keep current)</label>
+      <input type="file" name="image" accept="image/*" />
+
+      <label>Goal Tag (loss / gain / maintain / null)</label>
+      <input type="text" name="goalTag" />
+
+      <label>Categories (comma-separated: protein,carb,fat)</label>
+      <input type="text" name="categories" />
+
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="suggested" />
+        <label style="margin: 0">Suggested?</label>
+      </div>
+
+      <button type="submit">Save Food</button>
+    </form>
+
+    <h2 style="margin-top: 60px">
+      <i class="fas fa-seedling"></i> Current Foods
+    </h2>
+    <div style="overflow-x: auto">
+      <table id="food-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Protein</th>
+            <th>Fats</th>
+            <th>Carbs</th>
+            <th>Calories</th>
+            <th>Suggested</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script src="js/admin-food.js"></script>
+  </body>
+</html>

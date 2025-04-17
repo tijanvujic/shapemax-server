@@ -1,0 +1,53 @@
+header .logo,
+header .navigation a,
+header .navigation .user-nav button,
+header .navigation .user-nav span {
+  color: #000;
+}
+
+header .navigation a:not(:has(button))::after {
+  background-color: #000;
+}
+
+header .navigation .user-nav:hover {
+  color: #fff;
+}
+
+.menu-toggle span {
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+  }
+
+  header .navigation {
+    color: #000;
+    background: #fff;
+  }
+
+  header .navigation a,
+  header .navigation .user-nav span,
+  header .navigation .btnLogin-popup {
+    color: #000 !important;
+  }
+
+  header .navigation a:not(:has(button))::after {
+    background-color: #000;
+  }
+
+  header .navigation.active {
+    max-height: 300px;
+    opacity: 1;
+    z-index: 2000;
+  }
+}
+
+header .menu-toggle span {
+  background: #000;
+}
+
+.menu-toggle .bar {
+  background: #000;
+}

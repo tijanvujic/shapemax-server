@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f8f9fa;
+  color: #333;
+  transition: background 0.3s ease-in-out;
+  overflow-x: hidden;
+}
+
+/*--------- Text Fade-in Animation -----*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .text-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.text-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+/* Main Section */
+.container {
+  max-width: 1200px;
+  background: white;
+  padding: 60px;
+  margin-top: 140px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(168, 75, 21, 0.925);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  animation: fadeIn 0.8s;
+}
+
+.container a {
+  color: var(--grenadier);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: all 0.6s;
+}
+
+.container a:hover {
+  color: var(--salt-box);
+}
+
+.margin-title {
+  color: var(--grenadier);
+  margin: 50px 0px 30px;
+}
+
+p,
+ul {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+ul li:hover {
+  color: var(--spicy-pink);
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 2.5em;
+  color: var(--thunder);
+  margin-top: 10px;
+}
+
+/* Image Styling */
+.feature-image {
+  width: 30%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.food-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.food-category {
+  flex: 1;
+  max-width: 45%;
+  text-align: center;
+  margin: 10px;
+  padding: 15px;
+  background: var(--double-spanish-white);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.food-category:hover {
+  transform: scale(1.05);
+}
+
+.food-category img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.food-category img:hover {
+  transform: scale(1.08);
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  background: var(--thunder);
+  color: white;
+  text-align: center;
+  width: 100vw;
+}
+
+/* === Enhanced Styling for Benefit Section === */
+.text-fade {
+  background: linear-gradient(145deg, #f8f9fa, #ffffff);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.text-fade h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.text-fade ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.text-fade ul li {
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed #ddd;
+  font-size: 1rem;
+  color: #555;
+}
+
+.text-fade ul li:last-child {
+  border-bottom: none;
+}
+
+.text-fade strong {
+  color: #222;
+}
+
+.icon {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  color: #ff7f50;
+  margin-bottom: 0.5rem;
+}
+
+/* === Responsive Fixes === */
+@media (max-width: 600px) {
+  .text-fade {
+    padding: 1.5rem 1rem;
+  }
+
+  .text-fade h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-fade ul li {
+    font-size: 0.95rem;
+  }
+}
+
+/* === Gradient Animation Background for Section === */
+@keyframes fadeGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-fade {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  background-size: 200% 200%;
+  animation: fadeGradient 8s ease infinite;
+  border-left: 5px solid #ff7f50;
+}
+
+/* === Hover Transition and Lift === */
+.text-fade:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* === Enhanced Typography and List Icons === */
+.text-fade ul li {
+  position: relative;
+  padding-left: 30px;
+}
+
+.text-fade ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  color: #ff7f50;
+  font-weight: bold;
+}
+
+/* === Animate Icon Pulse === */
+.icon {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #ffe5d4, #ffffff);
+  padding: 40px;
+  color: #333;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: #ff6347;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.back-link {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.back-link a {
+  color: #ff6347;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid #ff6347;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.back-link a:hover {
+  background-color: #ff6347;
+  color: white;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+form label {
+  grid-column: span 2;
+  font-weight: 600;
+  margin-bottom: -10px;
+  color: #555;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="file"] {
+  grid-column: span 2;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fefefe;
+  transition: box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form input[type="file"]:focus {
+  box-shadow: 0 0 0 2px #ff7f50;
+  outline: none;
+}
+
+form input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+  accent-color: #ff7f50;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  grid-column: span 2;
+  font-weight: 500;
+}
+
+button {
+  grid-column: span 2;
+  background: linear-gradient(45deg, #ff6347, #ff7f50);
+  color: white;
+  font-weight: bold;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #e5533f, #ff5e3a);
+  transform: translateY(-1px);
+}
+
+table {
+  width: 100%;
+  margin-top: 50px;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 14px 18px;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 15px;
+}
+
+table th {
+  background-color: #ff7f50;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+table img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.edit-btn {
+  background: #bb7411;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: #ff964f;
+}
+
+input.suggested-toggle {
+  transform: scale(1.2);
+  cursor: pointer;
+  accent-color: #46bb42;
+}
+
+/* 📱 Responsive Improvements */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .admin-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  table img {
+    width: 40px;
+    height: 40px;
+  }
+
+  button,
+  .edit-btn {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}

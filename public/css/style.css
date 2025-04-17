@@ -1,0 +1,514 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.animate {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry -70px cover 45%;
+  width: 100%;
+}
+
+/*--------------Hero----------------*/
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  background: url("../assets/banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  .position {
+    width: 80%;
+    margin-top: 80px;
+    .hero-text {
+      color: #fff;
+      font-size: 40px;
+      .hero-description {
+        font-size: 16px;
+        color: var(--light-color);
+        margin-top: 20px;
+        font-weight: 300;
+        line-height: 1.5;
+        max-width: 420px;
+      }
+
+      span {
+        background: -webkit-linear-gradient(
+          30deg,
+          var(--grey-color) 0%,
+          var(--grey-color) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    button {
+      width: 200px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px;
+      font-size: 20px;
+      font-weight: 500;
+      background: var(--grey-color);
+      color: var(--light-color);
+      cursor: pointer;
+      margin: 20px 0 0 100px;
+      border: 2px solid var(--grey-color);
+      padding: 3px;
+      transform: scale(1);
+      background-size: 200%;
+      background-position: left;
+      transition: background-position 0.6s, transform 0.6s, border 0.6s;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 1s;
+    }
+
+    button:hover {
+      background-position: right;
+      border: 2px solid var(--light-color);
+      transform: scale(1.1);
+    }
+  }
+}
+
+/*---Animation for hero text---*/
+.hero-text h2 {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/*---- Delay---- */
+.hero-text h2:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.hero-text h2:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.hero-text h2:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.hero-text p {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+/*------------------Nutrition Section-----------*/
+.nutrition {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    var(--cape-palliser) 0%,
+    var(--whiskey) 100%
+  );
+  height: 100vh;
+  width: 100%;
+
+  .nutrition-right {
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    transform: translateY(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    .nutrition-text {
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--light-color);
+      font-size: 36px;
+      text-align: center;
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    button {
+      width: 200px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px;
+      font-size: 20px;
+      font-weight: 500;
+      background: transparent;
+      color: var(--light-color);
+      cursor: pointer;
+      margin-top: 20px;
+      border: 2px solid #fff;
+      padding: 3px;
+      transform: scale(1);
+      background-size: 200%;
+      background-position: left;
+      transition: background-position 0.6s, transform 0.6s;
+    }
+
+    button:hover {
+      background-position: right;
+      transform: scale(1.1);
+    }
+  }
+
+  .nutrition-left {
+    position: absolute;
+    top: 50%;
+    left: 11%;
+    transform: translateY(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 300px;
+    box-shadow: 8px 5px 5px 2px var(--thunder);
+    animation: smoothMotion 12s infinite linear;
+
+    img {
+      display: flex;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+}
+
+@keyframes smoothMotion {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.04) rotate(-90deg);
+  }
+  50% {
+    transform: scale(1.02) rotate(-180deg);
+  }
+  75% {
+    transform: scale(1.08) rotate(-270deg);
+  }
+  100% {
+    transform: scale(1) rotate(-360deg);
+  }
+}
+
+/*------------------Plan Section-----------*/
+.plan {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, var(--whiskey) 0%, var(--whiskey) 120%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan-text h2 {
+  font-size: 42px;
+  color: #fff;
+  margin-bottom: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.plan-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.plan-box {
+  width: 380px;
+  padding: 40px;
+  border-radius: 15px;
+  background: var(--light-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.plan-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.basic {
+  border: 3px solid var(--grey-color);
+}
+
+.pro {
+  border: 3px solid #4caf50;
+}
+
+.plan-box h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: var(--thunder);
+  font-weight: bold;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.price span {
+  text-decoration: line-through red 3px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.features li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-btn {
+  width: 85%;
+  padding: 14px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--light-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/*---- Basic Plan Button----- */
+.basic .select-btn {
+  background: var(--grey-color);
+  box-shadow: 0 4px 8px rgba(199, 131, 86, 0.3);
+}
+
+.basic .select-btn:hover {
+  color: var(--light-color);
+  transform: scale(1.08);
+  background: #6a6e7a;
+}
+
+/*------ Pro Plan Button -----*/
+.pro .select-btn {
+  background: #4caf50;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.pro .select-btn:hover {
+  transform: scale(1.08);
+  background: #45a049;
+}
+
+/* ------------------- Contact Section ------------------- */
+.contact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    var(--whiskey) 0%,
+    var(--cape-palliser) 100%
+  );
+  padding: 100px 20px 200px;
+  color: var(--light-color);
+
+  .animate {
+    max-width: 600px;
+  }
+}
+
+.contact-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-text h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.contact-text p {
+  font-size: 18px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--thunder);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid var(--grey-color);
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+.input-group textarea {
+  height: 150px;
+  width: 100%;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--orange-color);
+  color: var(--light-color);
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--yellow-color);
+}
+
+/*------------------Static Calculator Section-----------*/
+
+.static-calculator {
+  cursor: pointer;
+  z-index: 10;
+
+  .calculator {
+    transition: transform 0.6s, border 0.6s, background-color 0.6s;
+    transform: scale(1);
+    position: fixed;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    background-color: var(--thunder);
+    right: 50px;
+    bottom: 50px;
+    border-radius: 35px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon {
+    position: absolute;
+    font-size: 2.3em;
+    color: var(--light-color);
+    margin-top: 0px;
+  }
+}
+
+.static-calculator:hover {
+  .calculator {
+    transform: scale(1.1);
+    border: 1px solid var(--light-color);
+    background-color: var(--salt-box);
+  }
+  .icon {
+    transition: color 0.8s;
+    color: var(--double-spanish-white);
+  }
+}
+
+/*-------Contact message -----------*/
+
+.fade-msg {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.fade-msg.show {
+  opacity: 1;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Protein &amp; Muscle Growth</title>
+    <!-- <link rel="stylesheet" href="css/nutrition.css" /> -->
+    <link href="css/protein.css" rel="stylesheet" />
+    <link href="css/settings.css" rel="stylesheet" />
+    <link href="css/header.css" rel="stylesheet" />
+    <link href="css/hamburgerMenu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link href="css/blacktextheader.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link href="assets/logoSM.png" rel="icon" />
+  </head>
+  <body>
+    <!---------------Header-------------->
+    <header>
+      <a href="index.html"><h1 class="logo">ShapeMax</h1></a>
+      <!-- Hamburger Menu Button -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="store.html">Store</a>
+        <a href="nutritionmealplan.html">Plan</a>
+        <div class="user-nav">
+          <a href="dashboard.html"><span id="user-greeting"></span></a>
+          <button class="btnLogin-popup" id="logout-btn" style="display: none">
+            Logout
+          </button>
+          <a href="login.html"
+            ><button class="btnLogin-popup" id="login-btn">Login</button></a
+          >
+        </div>
+      </nav>
+    </header>
+    <section class="container">
+      <div class="text-fade">
+        <h1 class="margin-title">Protein &amp; Muscle Growth</h1>
+        <img
+          alt="Protein-rich foods"
+          class="feature-image"
+          src="assets/protein.jpg"
+        />
+        <p>
+          Protein is essential for muscle growth, recovery, and overall health.
+          It helps repair muscle fibers and supports metabolism.
+        </p>
+      </div>
+      <div class="text-fade">
+        <h2 class="margin-title">How Much Protein Do You Need?</h2>
+        <span class="icon"><ion-icon name="bar-chart"></ion-icon></span>
+        <ul>
+          <li>
+            <strong>Sedentary individuals:</strong> 0.8g per kg of body weight
+          </li>
+          <li>
+            <strong>Active individuals:</strong> 1.2g - 2.0g per kg of body
+            weight
+          </li>
+          <li>
+            <strong>Strength training athletes:</strong> 1.6g - 2.2g per kg of
+            body weight
+          </li>
+          <li>
+            <strong>Endurance athletes:</strong> 1.2g - 1.4g per kg of body
+            weight
+          </li>
+        </ul>
+        <p>
+          <a href="calculators.html">Use Our Protein Calculator</a> to determine
+          your daily protein requirement.
+        </p>
+      </div>
+      <div class="text-fade">
+        <h2 class="margin-title">High-Protein Meal Ideas</h2>
+        <span class="icon"><ion-icon name="sparkles"></ion-icon></span>
+        <ul>
+          <li>
+            <strong>Breakfast:</strong> Scrambled eggs with spinach &amp;
+            whole-grain toast
+          </li>
+          <li><strong>Lunch:</strong> Grilled chicken salad with quinoa</li>
+          <li><strong>Dinner:</strong> Baked salmon with roasted vegetables</li>
+          <li><strong>Snack:</strong> Greek yogurt with almonds &amp; honey</li>
+        </ul>
+        <div class="text-fade">
+          <h2 class="margin-title">Benefits of Protein for Lifters</h2>
+          <span class="icon"><ion-icon name="fitness-outline"></ion-icon></span>
+          <ul>
+            <li>
+              <strong>Muscle Repair:</strong> Repairs microtears in muscle
+              tissue after intense workouts.
+            </li>
+            <li>
+              <strong>Strength Gains:</strong> Supports hypertrophy and strength
+              adaptation.
+            </li>
+            <li>
+              <strong>Satiety:</strong> Helps reduce cravings and supports fat
+              loss during cuts.
+            </li>
+            <li>
+              <strong>Hormonal Health:</strong> Key amino acids support
+              testosterone and growth hormone levels.
+            </li>
+            <li>
+              <strong>Metabolism:</strong> Boosts calorie burn through the
+              thermic effect of food (TEF).
+            </li>
+          </ul>
+        </div>
+        <h2 class="margin-title">Start Your High-Protein Journey!</h2>
+        <p>
+          Track your protein intake using our
+          <a href="calculators.html">Protein Calculator</a> and optimize your
+          <a href="nutritionmealplan.html">Meals</a> for muscle growth and
+          overall health.
+        </p>
+      </div>
+    </section>
+    <div id="footer"></div>
+    <script src="js/footer.js"></script>
+    <!---------Scripts--------------->
+    <script
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      type="module"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- <script src="js/textfadein.js"></script> -->
+    <script src="js/hamburgerMenu.js"></script>
+    <script src="js/updateNavBar.js"></script>
+  </body>
+</html>

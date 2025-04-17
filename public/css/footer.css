@@ -1,0 +1,91 @@
+#footer {
+  width: 100%;
+}
+
+.main-footer {
+  width: 100%;
+}
+
+.main-footer {
+  position: relative;
+  left: 0;
+  margin: 0;
+  padding: 30px 0;
+  background: #222;
+  color: #fff;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-links {
+  margin-top: 5px;
+}
+
+.footer-links a {
+  color: #ff7f50;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #ffa07a;
+}
+
+/* === Social Icons === */
+.footer-socials {
+  margin-top: 10px;
+}
+
+.footer-socials a {
+  margin: 0 8px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #ff7f50;
+}
+
+/* === Back to Top Button === */
+.back-to-top {
+  margin-top: 15px;
+  padding: 10px 16px;
+  background-color: #ff7f50;
+  border: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #ff6347;
+}
+
+.footer-socials i {
+  font-size: 22px;
+  margin: 0 10px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-socials i:hover {
+  color: #ff7f50;
+}

@@ -1,0 +1,93 @@
+/* === Icon Styling for Headings and Buttons === */
+
+h1 i.fa-fire,
+h2 i.fa-utensils,
+h2 i.fa-dumbbell,
+h2 i.fa-exclamation-triangle,
+h2 i.fa-calendar-alt,
+.main-title i.fa-calendar-alt,
+.section-title i.fa-bullseye {
+  margin-right: 8px;
+  color: #ff7f50;
+}
+
+#goal-msg i.fa-bullseye {
+  margin-right: 6px;
+  color: #ff7f50;
+}
+
+#calculate-calories i.fa-calculator,
+.reset-button i.fa-sync-alt,
+.btn i.fa-save,
+.btn i.fa-check-circle,
+.logout-btn i.fa-sign-out-alt {
+  margin-right: 8px;
+  color: inherit;
+}
+
+/* Social Icons */
+.footer-socials i {
+  font-size: 22px;
+  margin: 0 10px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-socials i:hover {
+  color: #ff7f50;
+}
+
+/* === Icons for Plan Section === */
+
+.plan-text i.fa-list-ul,
+.plan-box h3 i.fa-seedling,
+.plan-box h3 i.fa-crown {
+  margin-right: 8px;
+}
+
+.plan-box .features i.fa-check-circle {
+  color: #28a745;
+  margin-right: 8px;
+}
+
+.plan-box .features i.fa-times-circle {
+  color: #dc3545;
+  margin-right: 8px;
+}
+
+.select-btn i.fa-arrow-right,
+.select-btn i.fa-user-plus {
+  margin-right: 6px;
+  color: #ffffff;
+}
+
+h1 i.fas,
+h2 i.fas,
+h3 i.fas,
+h4 i.fas {
+  color: inherit;
+  font-size: 1em;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* List item icons (features, nav, etc.) */
+ul li i.fas {
+  color: inherit;
+  font-size: 0.95em;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.calculator-nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.6;
+}
