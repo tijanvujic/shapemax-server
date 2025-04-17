@@ -159,7 +159,7 @@ function setupSuggestionsSection() {
   const controls = document.createElement("div");
   controls.className = "controls";
 
-  // 🔍 Search input to filter foods
+  // Search input to filter foods
   const searchInput = document.createElement("input");
   searchInput.className = "food-search";
   searchInput.placeholder = "Search foods...";

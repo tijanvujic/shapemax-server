@@ -258,7 +258,7 @@ function calculateMacros() {
     <p>Carbohydrates: ${carbs.toFixed(1)} g</p>
   `;
 
-  // Sends the calculated macro goals to the backend for saving in DB
+  // Sends the calculated macro goals to the Data base
 
   fetch("/api/save-macro-goals", {
     method: "POST",
