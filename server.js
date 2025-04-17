@@ -34,20 +34,12 @@ db.connect((err) => {
   console.log("MySQL Connected!");
 });
 
-app.use(
-  session({
-    secret: "your_secret_key",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
-
-app.get("/", (req, res) => {
-  res.send("ShapeMax server is running!");
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+db.query("SELECT 1", (err, result) => {
+  if (err) {
+    console.error("Failed test query to DB:", err.message);
+  } else {
+    console.log("Database test query successful.");
+  }
 });
 
 // -------- Register API --------
