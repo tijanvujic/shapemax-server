@@ -1,12 +1,12 @@
 const express = require("express");
 const path = require("path");
 const mysql = require("mysql2");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const multer = require("multer");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // -------- Middleware --------
 app.use(express.json());
@@ -22,15 +22,31 @@ app.use(
 
 // -------- Database Setup --------
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "shapemax",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+});
+
+console.log("DB config:", {
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  port: process.env.DB_PORT,
+  name: process.env.DB_NAME,
 });
 
 db.connect((err) => {
   if (err) throw err;
   console.log("MySQL Connected!");
+});
+
+db.query("SELECT 1", (err, result) => {
+  if (err) {
+    console.error("Failed test query to DB:", err.message);
+  } else {
+    console.log("Database test query successful.");
+  }
 });
 
 // -------- Register API --------
