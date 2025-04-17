@@ -29,6 +29,13 @@ const db = mysql.createConnection({
   port: process.env.DB_PORT,
 });
 
+console.log("DB config:", {
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  port: process.env.DB_PORT,
+  name: process.env.DB_NAME,
+});
+
 db.connect((err) => {
   if (err) throw err;
   console.log("MySQL Connected!");
